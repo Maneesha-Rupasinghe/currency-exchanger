@@ -15,22 +15,10 @@ const useCurrencyConverter = (baseCurrency: string, targetCurrency: string, amou
           //uncomment base and key variables and below commented lines to call from API (Realtime data)
           //base+key
           'https://raw.githubusercontent.com/Maneesha-Rupasinghe/CurrencyData/main/response.json'
-            //Clear cached data
-            //, {
-            // headers: {
-            //   'Cache-Control': 'no-cache'
-            // }
-            //} 
           //host in github
         );
-        
         //return the data as json
         const data = await response.json();
-        if (data.code==104)
-          {
-            throw new Error('Your monthly API request volume has been reached. Please upgrade your plan.:${data.code}')
-          }
-
         //check if the data is available
         if (data.success) {
           //create new array with label and value.
