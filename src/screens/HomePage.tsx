@@ -45,7 +45,7 @@ const HomePage = (p: any) => {
             <Text style={styles.result}>{convertedAmount}</Text>
           ) : null}
           <TouchableOpacity style={styles.NaviIcon} onPress={goToMultiCurrenciesPage}>
-            <AntDesign name="rightcircleo" size={24} color="black" />
+            <AntDesign name="rightcircleo" size={50} color="black" />
           </TouchableOpacity>
 
         </View>
@@ -67,8 +67,10 @@ const styles = StyleSheet.create({
     //borderWidth: 2, 
     //borderColor: 'black', 
     borderRadius: 40,
+  
   },
   container2: {
+    
     flex: 1,
     padding: 16,
     backgroundColor: 'white',
@@ -102,10 +104,10 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
   },
-  NaviIcon:{
+  NaviIcon: {
     position: 'absolute',
-    right: 10,
-    top: 10,
+    bottom: '10%',
+    left:'50%',
     backgroundColor: 'white',
     borderRadius: 50,
     width: 50,
