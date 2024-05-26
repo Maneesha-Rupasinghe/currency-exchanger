@@ -15,8 +15,15 @@ const useCurrencyConverter = (baseCurrency: string, targetCurrency: string, amou
           //uncomment base and key variables and below commented lines to call from API (Realtime data)
           //base+key
           'https://raw.githubusercontent.com/Maneesha-Rupasinghe/CurrencyData/main/response.json'
+          //Clear cached data
+          //, {
+          // headers: {
+          //   'Cache-Control': 'no-cache'
+          // }
+          //} 
           //host in github
         );
+
         //return the data as json
         const data = await response.json();
         //check if the data is available
