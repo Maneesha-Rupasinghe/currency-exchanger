@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native';
 import CurrencyPicker from '@/src/components/currencyPicker';
 import CurrencyInput from '@/src/components/currencyInput';
 import 'react-native-gesture-handler';
 import useCurrencyConverter from '../components/currencyConvertor';
 import { ScrollView } from 'react-native-gesture-handler';
 import HeaderText from '../components/header';
+import { AntDesign } from '@expo/vector-icons';
 
 
 const MultiCurrency = (p: any) => {
@@ -15,32 +16,33 @@ const MultiCurrency = (p: any) => {
   }
   const [amount, setAmount] = useState('1');
   const [baseCurrency, setBaseCurrency] = useState('USD');
-  const [targetCurrencies, setTargetCurrencies] = useState(['EUR', 'LKR', 'JPY', 'AUD', 'CAD']);
+  const [targetCurrencies, setTargetCurrencies] = useState(['EUR', 'LKR', 'JPY', 'AUD']);
   //get the currencies array and converted amount for first currency
   const { currencies, convertedAmount: convertedAmount1 } = useCurrencyConverter(baseCurrency, targetCurrencies[0], amount);
   //get converted amount for other values
   const { convertedAmount: convertedAmount2 } = useCurrencyConverter(baseCurrency, targetCurrencies[1], amount);
   const { convertedAmount: convertedAmount3 } = useCurrencyConverter(baseCurrency, targetCurrencies[2], amount);
   const { convertedAmount: convertedAmount4 } = useCurrencyConverter(baseCurrency, targetCurrencies[3], amount);
-  const { convertedAmount: convertedAmount5 } = useCurrencyConverter(baseCurrency, targetCurrencies[4], amount);
+  //const { convertedAmount: convertedAmount5 } = useCurrencyConverter(baseCurrency, targetCurrencies[4], amount);
 
   return (
-    <ScrollView>
+    
       <View style={styles.container}>
-      <HeaderText />
-
+        <HeaderText />
+        <View style={styles.container2}>
+        <CurrencyInput amount={amount} onAmountChange={setAmount} />
         <CurrencyPicker
           selectedCurrency={baseCurrency}
           onCurrencyChange={setBaseCurrency}
-           />
-        <CurrencyInput amount={amount} onAmountChange={setAmount} />
+        />
+        
         <View style={{
           flex: 1,
           flexDirection: 'row',
         }}>
           <View style={{
             flex: 3,
-            backgroundColor: 'yellow',
+            
           }}>
 
             {targetCurrencies.map((currency, index) => ( //mapping the target currency array ex: index 0 currency EUR
@@ -56,36 +58,54 @@ const MultiCurrency = (p: any) => {
                   //update the target currency array
                   setTargetCurrencies(newTargetCurrencies);
                 }}
-                //currencies={currencies}
-                 />
+              //currencies={currencies}
+              />
             ))}
           </View>
           <View
             style={{
               flex: 2,
-              backgroundColor: 'green',
+              
+              padding: 0,
+              margin: 0,
             }}>
             <View style={styles.resultsContainer}>
               <Text style={styles.result}> {/*({targetCurrencies[0]}):*/} {convertedAmount1}</Text>
               <Text style={styles.result}> {/*({targetCurrencies[1]}):*/} {convertedAmount2}</Text>
               <Text style={styles.result}> {/*({targetCurrencies[2]}):*/} {convertedAmount3}</Text>
               <Text style={styles.result}> {/*({targetCurrencies[3]}):*/} {convertedAmount4}</Text>
-              <Text style={styles.result}> {/*({targetCurrencies[4]}):*/} {convertedAmount5}</Text>
+              
             </View>
           </View>
 
         </View>
-        <Button title='Single Currency' onPress={goToSingleCurrenciesPage}></Button>
+        <TouchableOpacity style={styles.NaviIcon} onPress={goToSingleCurrenciesPage}>
+            <AntDesign name="leftcircleo" size={50} color="black" />
+          </TouchableOpacity>
+        </View>
       </View>
-    </ScrollView>
+   
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#a02c3e',
+    //borderWidth: 2, 
+    //borderColor: 'black', 
+    borderRadius: 40,
+
+  },
+  container2:{
+    flex: 1,
     padding: 16,
-    justifyContent: 'center',
+    backgroundColor: 'white',
+    //borderWidth: 2, 
+    //borderColor: 'black', 
+    borderRadius: 40,
+
+
   },
   header: {
     fontSize: 24,
@@ -96,11 +116,41 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   result: {
+    marginVertical: 10,
+    height: 50,
+    borderColor: 'gray',
+    borderWidth: 1,
+    borderStyle: 'dashed',
+    paddingHorizontal: 10,
     fontSize: 18,
-    textAlign: 'center',
-    marginTop: 10,
-    marginBottom: 37,
+    borderRadius: 8,
+    backgroundColor: '#fff',
+    color: '#333',
+    position: 'relative',
+    top: -20,
+
   },
+  NaviIcon: {
+    
+    position: 'absolute',
+    bottom: '2%',
+    left:'50%',
+    backgroundColor: 'white',
+    borderRadius: 50,
+    width: 50,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 10,
+    
+  }
 });
 
 export default MultiCurrency;

@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     color: '#333',
     marginBottom: 10,
+    marginTop: 10,
 
   },
   swapButton: {
@@ -105,8 +106,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   NaviIcon: {
+    
     position: 'absolute',
-    bottom: '10%',
+    bottom: '2%',
     left:'50%',
     backgroundColor: 'white',
     borderRadius: 50,
@@ -122,6 +124,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 10,
+    
   }
 });
 
