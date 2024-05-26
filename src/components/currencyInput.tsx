@@ -16,7 +16,11 @@ const CurrencyInput = ({ amount, onAmountChange }: CurrencyInputProps) => {
 
     if (range.test(text)) {
       setError('');
-      onAmountChange(text);
+      if (text === '') {
+        onAmountChange('0');
+      } else {
+        onAmountChange(text);
+      }
     } else {
       setError('Invalid amount. Please enter a valid number.');
     }

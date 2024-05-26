@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import CurrencyPicker from '@/src/components/currencyPicker';
 import CurrencyInput from '@/src/components/currencyInput';
 import 'react-native-gesture-handler';
 import useCurrencyConverter from '../components/currencyConvertor';
-import { ScrollView } from 'react-native-gesture-handler';
 import HeaderText from '../components/header';
 import { AntDesign } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
+
 
 
 const MultiCurrency = (p: any) => {
@@ -15,8 +14,8 @@ const MultiCurrency = (p: any) => {
     p.navigation.navigate("HomePage")
 
   }
-   
-  
+
+
   const [amount, setAmount] = useState('1');
   const [baseCurrency, setBaseCurrency] = useState('USD');
   const [targetCurrencies, setTargetCurrencies] = useState(['EUR', 'LKR', 'JPY', 'AUD']);
@@ -29,25 +28,21 @@ const MultiCurrency = (p: any) => {
   //const { convertedAmount: convertedAmount5 } = useCurrencyConverter(baseCurrency, targetCurrencies[4], amount);
 
   return (
-    
-      <View style={styles.container}>
-        <HeaderText />
-        <View style={styles.container2}>
+
+    <View style={styles.container}>
+      <HeaderText />
+      <View style={styles.container2}>
         <CurrencyInput amount={amount} onAmountChange={setAmount} />
         <CurrencyPicker
           selectedCurrency={baseCurrency}
           onCurrencyChange={setBaseCurrency}
         />
-        
-        <View style={{
-          flex: 1,
-          flexDirection: 'row',
-          
-          
-        }}>
+
+        <View style={styles.container3}
+    >
           <View style={{
             flex: 3,
-            
+
           }}>
 
             {targetCurrencies.map((currency, index) => ( //mapping the target currency array ex: index 0 currency EUR
@@ -67,33 +62,28 @@ const MultiCurrency = (p: any) => {
               />
             ))}
           </View>
-          <View
-            style={{
-              flex: 2,
-              
-              padding: 0,
-              margin: 0,
-            }}>
+          <View style={styles.container1}
+          >
             <View style={styles.resultsContainer}>
               <Text style={styles.result}> {/*({targetCurrencies[0]}):*/} {convertedAmount1}</Text>
               <Text style={styles.result}> {/*({targetCurrencies[1]}):*/} {convertedAmount2}</Text>
               <Text style={styles.result}> {/*({targetCurrencies[2]}):*/} {convertedAmount3}</Text>
               <Text style={styles.result}> {/*({targetCurrencies[3]}):*/} {convertedAmount4}</Text>
-              
+
             </View>
           </View>
 
         </View>
         <TouchableOpacity style={styles.NaviIcon} onPress={goToSingleCurrenciesPage}>
-            <AntDesign name="leftcircleo" size={50} color="black" />
-          </TouchableOpacity>
+          <AntDesign name="leftcircleo" size={50} color="black" />
+        </TouchableOpacity>
 
 
-          
 
-        </View>
+
       </View>
-   
+    </View>
+
   );
 };
 
@@ -106,12 +96,12 @@ const styles = StyleSheet.create({
     borderRadius: 40,
 
   },
-  container2:{
+  container2: {
     flex: 1,
     padding: 16,
     backgroundColor: 'white',
-    borderWidth: 0.5, 
-    borderColor: '#a02c3e', 
+    borderWidth: 0.5,
+    borderColor: '#a02c3e',
     borderRadius: 40,
 
 
@@ -131,7 +121,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderStyle: 'dashed',
     paddingHorizontal: 10,
-    paddingVertical:10,
+    paddingVertical: 10,
     fontSize: 18,
     borderRadius: 8,
     backgroundColor: '#fff',
@@ -145,10 +135,10 @@ const styles = StyleSheet.create({
     height: 50,
   },
   NaviIcon: {
-    
+
     position: 'absolute',
     bottom: '2%',
-    left:'50%',
+    left: '50%',
     backgroundColor: 'white',
     borderRadius: 50,
     width: 50,
@@ -163,8 +153,18 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 10,
-    
+
   },
+  container1:
+  {
+    flex: 2,
+    padding: 0,
+    margin: 0,
+  },
+  container3:{
+    flex: 1,
+    flexDirection: 'row',
+  }
 
 });
 

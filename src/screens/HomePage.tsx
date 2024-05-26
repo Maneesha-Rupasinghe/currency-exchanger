@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView,Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, Image } from 'react-native';
 import CurrencyPicker from '@/src/components/currencyPicker';
 import CurrencyInput from '@/src/components/currencyInput';
 import 'react-native-gesture-handler';
@@ -51,8 +51,6 @@ const HomePage = (p: any) => {
           <TouchableOpacity style={styles.NaviIcon} onPress={goToMultiCurrenciesPage}>
             <AntDesign name="rightcircleo" size={50} color="black" />
           </TouchableOpacity>
-        
-
         </View>
       </View>
     </SafeAreaView>
@@ -72,15 +70,15 @@ const styles = StyleSheet.create({
     //borderWidth: 2, 
     //borderColor: 'black', 
     borderRadius: 40,
-  
+
   },
   container2: {
-    
+
     flex: 1,
     padding: 16,
     backgroundColor: 'white',
-    borderWidth: 0.5, 
-    borderColor: '#a02c3e', 
+    borderWidth: 0.5,
+    borderColor: '#a02c3e',
     borderRadius: 40,
   },
   result: {
@@ -111,10 +109,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   NaviIcon: {
-    
+
     position: 'absolute',
     bottom: '2%',
-    left:'50%',
+    left: '50%',
     backgroundColor: 'white',
     borderRadius: 50,
     width: 50,
@@ -129,7 +127,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 10,
-    
+
   }
 });
 
