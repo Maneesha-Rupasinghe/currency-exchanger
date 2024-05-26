@@ -1,5 +1,6 @@
+import { MaterialIcons } from '@expo/vector-icons';
 import React from 'react';
-import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
 import { RFPercentage } from 'react-native-responsive-fontsize';
 
 const HeaderText = () => {
@@ -7,7 +8,9 @@ const HeaderText = () => {
         <SafeAreaView style={styles.safeArea}>
             <View style={styles.container}>
                 <Text style={styles.head}>CURRENCY EXCHANGER</Text>
+              
             </View>
+
         </SafeAreaView>
     );
 };
@@ -33,6 +36,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: 'white',
     },
+
 });
 
 export default HeaderText;

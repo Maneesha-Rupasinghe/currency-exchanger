@@ -7,6 +7,7 @@ import useCurrencyConverter from '../components/currencyConvertor';
 import { ScrollView } from 'react-native-gesture-handler';
 import HeaderText from '../components/header';
 import { AntDesign } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 
 
 const MultiCurrency = (p: any) => {
@@ -14,6 +15,8 @@ const MultiCurrency = (p: any) => {
     p.navigation.navigate("HomePage")
 
   }
+   
+  
   const [amount, setAmount] = useState('1');
   const [baseCurrency, setBaseCurrency] = useState('USD');
   const [targetCurrencies, setTargetCurrencies] = useState(['EUR', 'LKR', 'JPY', 'AUD']);
@@ -39,6 +42,8 @@ const MultiCurrency = (p: any) => {
         <View style={{
           flex: 1,
           flexDirection: 'row',
+          
+          
         }}>
           <View style={{
             flex: 3,
@@ -82,6 +87,10 @@ const MultiCurrency = (p: any) => {
         <TouchableOpacity style={styles.NaviIcon} onPress={goToSingleCurrenciesPage}>
             <AntDesign name="leftcircleo" size={50} color="black" />
           </TouchableOpacity>
+
+
+          
+
         </View>
       </View>
    
@@ -101,8 +110,8 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
     backgroundColor: 'white',
-    //borderWidth: 2, 
-    //borderColor: 'black', 
+    borderWidth: 0.5, 
+    borderColor: '#a02c3e', 
     borderRadius: 40,
 
 
@@ -122,6 +131,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderStyle: 'dashed',
     paddingHorizontal: 10,
+    paddingVertical:10,
     fontSize: 18,
     borderRadius: 8,
     backgroundColor: '#fff',
@@ -129,6 +139,10 @@ const styles = StyleSheet.create({
     position: 'relative',
     top: -20,
 
+  },
+  tinyLogo: {
+    width: 50,
+    height: 50,
   },
   NaviIcon: {
     
@@ -150,7 +164,8 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 10,
     
-  }
+  },
+
 });
 
 export default MultiCurrency;

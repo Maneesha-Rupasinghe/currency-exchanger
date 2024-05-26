@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Button, TouchableOpacity, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView,Image } from 'react-native';
 import CurrencyPicker from '@/src/components/currencyPicker';
 import CurrencyInput from '@/src/components/currencyInput';
 import 'react-native-gesture-handler';
@@ -7,6 +7,10 @@ import useCurrencyConverter from '../components/currencyConvertor';
 import HeaderText from '../components/header';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
+import LottieView from 'lottie-react-native';
+
+
+
 
 const HomePage = (p: any) => {
 
@@ -47,6 +51,7 @@ const HomePage = (p: any) => {
           <TouchableOpacity style={styles.NaviIcon} onPress={goToMultiCurrenciesPage}>
             <AntDesign name="rightcircleo" size={50} color="black" />
           </TouchableOpacity>
+        
 
         </View>
       </View>
@@ -74,8 +79,8 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
     backgroundColor: 'white',
-    //borderWidth: 2, 
-    //borderColor: 'black', 
+    borderWidth: 0.5, 
+    borderColor: '#a02c3e', 
     borderRadius: 40,
   },
   result: {
