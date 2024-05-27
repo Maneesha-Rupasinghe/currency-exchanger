@@ -54,5 +54,22 @@ Join our community of developers creating universal apps.
 Please add these dependencies to your project
 
 ```bash
-npm install
+npm install react-native-picker-select
 ```
+```bash
+npm install @react-navigation/bottom-tabs
+```
+```bash
+npm install @react-navigation/native
+```
+```bash
+npx expo install react-native-screens react-native-safe-area-context
+```
+```bash
+npm install @react-navigation/stack
+```
+```bash
+npm install react-native-responsive-fontsize
+```
+
+
