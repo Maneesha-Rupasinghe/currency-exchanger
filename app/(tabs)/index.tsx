@@ -2,6 +2,8 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import 'react-native-gesture-handler';
 import Navigation from '@/src/navigation/Navigation';
+import { Appearance, useColorScheme } from 'react-native';
+
 
 
 
