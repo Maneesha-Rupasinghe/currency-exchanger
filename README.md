@@ -71,5 +71,11 @@ npm install @react-navigation/stack
 ```bash
 npm install react-native-responsive-fontsize
 ```
+ Additional Information
+
+   Due to the limitations of API calls, I have cached the file on GitHub. If you want to make direct API calls, uncomment line 17 in the src\components\currencyConvertor.tsx file and comment out line 18 (GitHub link).
+
+   To clear the cache, uncomment lines 19 to 24 in the same file mentioned above.
+   
 
 
