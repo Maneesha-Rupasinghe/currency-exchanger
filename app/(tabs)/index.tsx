@@ -5,22 +5,10 @@ import Navigation from '@/src/navigation/Navigation';
 
 
 
-
-
-
 const HomeScreen = () => {
-
-
-
-
   return (
     <View style={styles.container}>
-
-
       <Navigation />
-
-
-
     </View>
   );
 };

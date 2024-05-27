@@ -28,7 +28,6 @@ const MultiCurrency = (p: any) => {
   //const { convertedAmount: convertedAmount5 } = useCurrencyConverter(baseCurrency, targetCurrencies[4], amount);
 
   return (
-
     <View style={styles.container}>
       <HeaderText />
       <View style={styles.container2}>
@@ -37,14 +36,11 @@ const MultiCurrency = (p: any) => {
           selectedCurrency={baseCurrency}
           onCurrencyChange={setBaseCurrency}
         />
-
         <View style={styles.container3}
-    >
+        >
           <View style={{
             flex: 3,
-
           }}>
-
             {targetCurrencies.map((currency, index) => ( //mapping the target currency array ex: index 0 currency EUR
               <CurrencyPicker
                 key={index}
@@ -65,11 +61,10 @@ const MultiCurrency = (p: any) => {
           <View style={styles.container1}
           >
             <View style={styles.resultsContainer}>
-              <Text style={styles.result}> {/*({targetCurrencies[0]}):*/} {convertedAmount1}</Text>
-              <Text style={styles.result}> {/*({targetCurrencies[1]}):*/} {convertedAmount2}</Text>
-              <Text style={styles.result}> {/*({targetCurrencies[2]}):*/} {convertedAmount3}</Text>
-              <Text style={styles.result}> {/*({targetCurrencies[3]}):*/} {convertedAmount4}</Text>
-
+              <Text style={styles.result} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.5} > {/*({targetCurrencies[0]}):*/} {convertedAmount1}</Text>
+              <Text style={styles.result} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.5}> {/*({targetCurrencies[1]}):*/} {convertedAmount2}</Text>
+              <Text style={styles.result} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.5}> {/*({targetCurrencies[2]}):*/} {convertedAmount3}</Text>
+              <Text style={styles.result} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.5}> {/*({targetCurrencies[3]}):*/} {convertedAmount4}</Text>
             </View>
           </View>
 
@@ -77,10 +72,6 @@ const MultiCurrency = (p: any) => {
         <TouchableOpacity style={styles.NaviIcon} onPress={goToSingleCurrenciesPage}>
           <AntDesign name="leftcircleo" size={50} color="black" />
         </TouchableOpacity>
-
-
-
-
       </View>
     </View>
 
@@ -91,8 +82,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#a02c3e',
-    //borderWidth: 2, 
-    //borderColor: 'black', 
     borderRadius: 40,
 
   },
@@ -103,8 +92,6 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: '#a02c3e',
     borderRadius: 40,
-
-
   },
   header: {
     fontSize: 24,
@@ -128,14 +115,12 @@ const styles = StyleSheet.create({
     color: '#333',
     position: 'relative',
     top: -20,
-
   },
   tinyLogo: {
     width: 50,
     height: 50,
   },
   NaviIcon: {
-
     position: 'absolute',
     bottom: '2%',
     left: '50%',
@@ -157,11 +142,11 @@ const styles = StyleSheet.create({
   },
   container1:
   {
-    flex: 2,
+    flex: 3,
     padding: 0,
     margin: 0,
   },
-  container3:{
+  container3: {
     flex: 1,
     flexDirection: 'row',
   }

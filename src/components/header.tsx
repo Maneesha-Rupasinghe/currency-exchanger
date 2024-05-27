@@ -6,7 +6,7 @@ const HeaderText = () => {
     return (
         <SafeAreaView style={styles.safeArea}>
             <View style={styles.container}>
-                <Text style={styles.head}>CURRENCY EXCHANGER</Text>
+                <Text style={styles.head}>CURRENCY {'\n'}EXCHANGER</Text>
             </View>
         </SafeAreaView>
     );
@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
         marginBottom: 70,
     },
     container: {
-        //marginTop:'10%',
         alignItems: 'center',
         justifyContent: 'center',
         paddingVertical: 10,

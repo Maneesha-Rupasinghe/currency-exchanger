@@ -6,7 +6,6 @@ import countriesData from './Countries.json'
 interface CurrencyPickerProps {
     selectedCurrency: string;
     onCurrencyChange: (currency: string) => void;
-
 }
 
 const CurrencyPicker = ({ selectedCurrency, onCurrencyChange, }: CurrencyPickerProps) => {
@@ -40,15 +39,15 @@ const CurrencyPicker = ({ selectedCurrency, onCurrencyChange, }: CurrencyPickerP
 const styles = StyleSheet.create({
     container: {
         marginVertical: 10,
-        height: 50, 
-    borderColor: 'gray',
-    borderWidth: 1,
-    borderStyle: 'dashed', 
-    paddingHorizontal: 10,
-    fontSize: 18, 
-    borderRadius: 8, 
-    backgroundColor: '#fff', 
-    color: '#333', 
+        height: 50,
+        borderColor: 'gray',
+        borderWidth: 1,
+        borderStyle: 'dashed',
+        paddingHorizontal: 10,
+        fontSize: 18,
+        borderRadius: 8,
+        backgroundColor: '#fff',
+        color: '#333',
     },
 });
 

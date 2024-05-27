@@ -11,9 +11,7 @@ const CurrencyInput = ({ amount, onAmountChange }: CurrencyInputProps) => {
 
   //input validate
   const handleAmountChange = (text: string) => {
-
     const range = /^[0-9]*\.?[0-9]*$/; 
-
     if (range.test(text)) {
       setError('');
       if (text === '') {

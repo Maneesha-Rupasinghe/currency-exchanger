@@ -7,7 +7,7 @@ import useCurrencyConverter from '../components/currencyConvertor';
 import HeaderText from '../components/header';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
-import LottieView from 'lottie-react-native';
+
 
 
 
@@ -45,9 +45,9 @@ const HomePage = (p: any) => {
             selectedCurrency={targetCurrency}
             onCurrencyChange={setTargetCurrency}
           />
-          {convertedAmount ? (
-            <Text style={styles.result}>{convertedAmount}</Text>
-          ) : null}
+          <Text style={styles.result} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.5}>
+            {convertedAmount}
+          </Text>
           <TouchableOpacity style={styles.NaviIcon} onPress={goToMultiCurrenciesPage}>
             <AntDesign name="rightcircleo" size={50} color="black" />
           </TouchableOpacity>
@@ -65,15 +65,10 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-
     backgroundColor: '#a02c3e',
-    //borderWidth: 2, 
-    //borderColor: 'black', 
     borderRadius: 40,
-
   },
   container2: {
-
     flex: 1,
     padding: 16,
     backgroundColor: 'white',
@@ -94,7 +89,6 @@ const styles = StyleSheet.create({
     color: '#333',
     marginBottom: 10,
     marginTop: 10,
-
   },
   swapButton: {
     alignSelf: 'center',
