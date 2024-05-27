@@ -6,7 +6,7 @@ const HeaderText = () => {
     return (
         <SafeAreaView style={styles.safeArea}>
             <View style={styles.container}>
-                <Text style={styles.head}>CURRENCY {'\n'}EXCHANGER</Text>
+                <Text style={styles.head}>CURRENCY EXCHANGER</Text>
             </View>
         </SafeAreaView>
     );
