@@ -17,7 +17,8 @@ const CurrencyInput = ({ amount, onAmountChange }: CurrencyInputProps) => {
       if (text === '') {
         onAmountChange('0');
       } else {
-        onAmountChange(text);
+        const formattedText = text.replace(/^0+(?!$|\.|0)/, '');
+        onAmountChange(formattedText);
       }
     } else {
       setError('Invalid amount. Please enter a valid number.');
@@ -27,7 +28,7 @@ const CurrencyInput = ({ amount, onAmountChange }: CurrencyInputProps) => {
   return (
     <View style={styles.container}>
       <TextInput
-        style={[styles.input, error ? styles.inputError : {}]}
+        style={[styles.input, error ? styles.inputError   : {}]}
         keyboardType="numeric"
         value={amount}
         onChangeText={handleAmountChange}
@@ -55,6 +56,7 @@ const styles = StyleSheet.create({
   },
   inputError: {
     borderColor: 'red',
+    
   },
   errorText: {
     color: 'red',
