@@ -17,6 +17,7 @@ const CurrencyPicker = ({ selectedCurrency, onCurrencyChange, }: CurrencyPickerP
         <View style={styles.container}>
             <Picker
                 selectedValue={selectedCurrency}
+                
                 //trigger when user select the currency
                 onValueChange={onCurrencyChange}
             >

@@ -17,7 +17,7 @@ const CurrencyInput = ({ amount, onAmountChange }: CurrencyInputProps) => {
       if (text === '') {
         onAmountChange('0');
       } else {
-        const formattedText = text.replace(/^0+(?!$|\.|0)/, '');
+        const formattedText = text.replace(/^0+(?!$|\.)/, '');
         onAmountChange(formattedText);
       }
     } else {
