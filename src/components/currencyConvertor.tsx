@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
-import { Alert } from 'react-native';
+
 const useCurrencyConverter = (baseCurrency: string, targetCurrency: string, amount: string) => {
 
   const base = 'http://data.fixer.io/api/latest?access_key=';
-  //const key = 'c226756fd4282edc545f1fb6ff4b1e7c' //expired key
-  const key = '5c211b8cc11732fa96378b685feccfe5' //valid key
+  const key = 'c226756fd4282edc545f1fb6ff4b1e7c' //expired key
+  //const key = '5c211b8cc11732fa96378b685feccfe5' //valid key
   const [currencies, setCurrencies] = useState<{ label: string; value: string }[]>([]);
 
   const [convertedAmount, setConvertedAmount] = useState('');
+  const [error,setError] = useState('');
+
+ 
 
   useEffect(() => {
     const fetchCurrencyRates = async () => {
@@ -78,6 +81,7 @@ const useCurrencyConverter = (baseCurrency: string, targetCurrency: string, amou
         break;
       case 429:
         console.error('The maximum allowed API amount of monthly API requests has been reached.');
+       
         break;
       case 601:
         console.error('An invalid base currency has been entered.');
@@ -94,13 +98,17 @@ const useCurrencyConverter = (baseCurrency: string, targetCurrency: string, amou
       case 605:
         console.error('No or an invalid timeframe has been specified. [timeseries]');
         break;
+        case 104:
+          setError(error.info);
+          console.error('Your monthly API request volume has been reached. Please upgrade your plan.');
+          break;
       default:
         console.error('An unknown error occurred.');
     }
     console.error(`Error ${error.code}: ${error.info}`);
   };
 
-  return { currencies, convertedAmount };
+  return { currencies, convertedAmount ,error};
 };
 
 export default useCurrencyConverter;

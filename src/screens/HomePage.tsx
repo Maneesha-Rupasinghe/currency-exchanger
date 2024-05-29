@@ -21,7 +21,7 @@ const HomePage = (p: any) => {
   const [amount, setAmount] = useState('1');
   const [baseCurrency, setBaseCurrency] = useState('AED');
   const [targetCurrency, setTargetCurrency] = useState('AFN');
-  const { currencies, convertedAmount } = useCurrencyConverter(baseCurrency, targetCurrency, amount);
+  const { currencies, convertedAmount,error } = useCurrencyConverter(baseCurrency, targetCurrency, amount);
 
   const swapCurrencies = () => {
     setBaseCurrency(targetCurrency);
@@ -32,6 +32,7 @@ const HomePage = (p: any) => {
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <HeaderText />
+        
         <View style={styles.container2}>
           <CurrencyInput amount={amount} onAmountChange={setAmount} />
           <CurrencyPicker
@@ -48,6 +49,15 @@ const HomePage = (p: any) => {
           <Text style={styles.result} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.5}>
             {convertedAmount}
           </Text>
+          {/* {
+            error? (
+              <Text >{error}</Text>
+            ) : (
+              <Text style={styles.result} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.5}>
+              {convertedAmount}
+            </Text>
+            )
+          } */}
           <TouchableOpacity style={styles.NaviIcon} onPress={goToMultiCurrenciesPage}>
             <AntDesign name="rightcircleo" size={50} color="black" />
           </TouchableOpacity>

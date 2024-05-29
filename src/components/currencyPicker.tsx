@@ -6,6 +6,7 @@ import countriesData from './Countries.json'
 interface CurrencyPickerProps {
     selectedCurrency: string;
     onCurrencyChange: (currency: string) => void;
+   
 }
 
 const CurrencyPicker = ({ selectedCurrency, onCurrencyChange, }: CurrencyPickerProps) => {
