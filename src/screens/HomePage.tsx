@@ -46,7 +46,7 @@ const HomePage = (p: any) => {
             selectedCurrency={targetCurrency}
             onCurrencyChange={setTargetCurrency}
           />
-          <Text style={styles.result} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.5}>
+          <Text style={styles.result} numberOfLines={1} adjustsFontSizeToFit={true} minimumFontScale={0.5}>
             {convertedAmount}
           </Text>
           {/* {
